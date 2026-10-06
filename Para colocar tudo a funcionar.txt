@@ -1,0 +1,35 @@
+Para colocar tudo a funcionar
+Passo 1 - Abrir o xampp
+Passo 2 - Vamos rodar o Script hacksql.py
+Passo 3 - Vamos aceder ao postman e usar a URL http://127.0.0.1:5000
+
+Apos isso vamos ver uma mensagem informando que está a rodar
+a seguir vamos entrar em rota /login com o método POST
+no body raw json
+
+se tentar
+{
+"database":"sistema_teste",
+"username":"' OR 1=1 --",
+"password":"123"
+}
+
+{
+    "mensagem": "Credenciais invalidas.",
+    "status": "erro"
+}
+
+
+{
+    "database":"sistema_teste",
+    "username":"admin",
+    "password":"a senha" 
+}
+
+
+
+Retornará uma chave token para o acesso
+
+Então vamos em GET rota /bases  escolhemos authorization e colocamos o token gerado
+
+Entao vamos poder ver a nossa base de dados  (/base trás SHOWDATABES;)
